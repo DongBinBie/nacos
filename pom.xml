@@ -88,7 +88,7 @@
     </issueManagement>
     
     <properties>
-        <revision>2.3.2</revision>
+        <revision>2.3.2-acxiom</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Compiler settings properties -->
@@ -136,6 +136,7 @@
         <log4j.version>2.17.1</log4j.version>
         
         <mysql-connector-java.version>8.0.33</mysql-connector-java.version>
+        <postgresql.version>42.5.1</postgresql.version>
         <derby.version>10.14.2.0</derby.version>
         <jjwt.version>0.11.2</jjwt.version>
         <javatuples.version>1.2</javatuples.version>
@@ -857,7 +858,16 @@
                 <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql-connector-java.version}</version>
             </dependency>
-            
+
+
+
+
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.apache.derby</groupId>
                 <artifactId>derby</artifactId>
@@ -1016,6 +1026,28 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
+
+    <repositories>
+        <repository>
+            <id>acxiom_snapshot</id>
+            <name>acxiom snapshot</name>
+            <url>http://ims-maven-repo.acxiom.com.cn:8080/repository/acxiom_snapshot</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>acxiom_release</id>
+            <name>acxiom release</name>
+            <url>http://ims-maven-repo.acxiom.com.cn:8080/repository/acxiom_release</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>
 
